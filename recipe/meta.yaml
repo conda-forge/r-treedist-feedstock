@@ -33,6 +33,7 @@ requirements:
   host:
     - r-base
     - r-rcpp
+    - r-rdpack
     - r-treetools >=1.1.0
     - r-ape >=5.0
     - r-colorspace
@@ -42,6 +43,7 @@ requirements:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-rcpp
+    - r-rdpack
     - r-treetools >=1.1.0
     - r-ape >=5.0
     - r-colorspace
