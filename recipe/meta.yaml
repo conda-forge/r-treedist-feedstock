@@ -1,4 +1,4 @@
-{% set version = '1.2.0' %}
+{% set version = "1.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TreeDist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TreeDist/TreeDist_{{ version }}.tar.gz
-  sha256: 132eb88952f1a1a1f70754fd5fdd3d41ecd59d121e5b85bcf3a53000fe8681a2
+  sha256: 00cf438e8114a4bca27d85db18748e5c0823666a47963f962ed17ee09a24441e
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -33,6 +33,7 @@ requirements:
   host:
     - r-base
     - r-rcpp
+    - r-rdpack
     - r-treetools >=1.1.0
     - r-ape >=5.0
     - r-colorspace
@@ -42,6 +43,7 @@ requirements:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-rcpp
+    - r-rdpack
     - r-treetools >=1.1.0
     - r-ape >=5.0
     - r-colorspace
@@ -56,16 +58,9 @@ test:
 about:
   home: https://ms609.github.io/TreeDist/, https://github.com/ms609/TreeDist
   license: GPL-3.0-or-later
-  summary: Implements measures of tree similarity, including information-based generalized Robinson-Foulds
-    distances (Phylogenetic Information Distance, Clustering Information Distance, Matching
-    Split Information Distance; Smith, 2020) <doi:10.1093/bioinformatics/btaa614>; Jaccard-Robinson-Foulds
-    distances (Bocker et al. 2013) <doi:10.1007/978-3-642-40453-5_13>, including the
-    Nye et al. (2006) metric <doi:10.1093/bioinformatics/bti720>; the Matching Split
-    Distance (Bogdanowicz & Giaro 2012) <doi:10.1109/TCBB.2011.48>; Maximum Agreement
-    Subtree distances; the Kendall-Colijn (2016) distance <doi:10.1093/molbev/msw124>,
-    and the Nearest Neighbour Interchange (NNI) distance, approximated per Li et al.
-    (1996) <doi:10.1007/3-540-61332-3_168>. Calculates the median of a set of trees
-    under any distance metric.
+  summary: Implements measures of tree similarity, including information-based generalized Robinson-Foulds distances (Phylogenetic Information Distance, Clustering Information Distance, Matching Split Information Distance; Smith, 2020) <doi:10.1093/bioinformatics/btaa614>; Jaccard-Robinson-Foulds distances (Bocker et al.
+    2013) <doi:10.1007/978-3-642-40453-5_13>, including the Nye et al. (2006) metric <doi:10.1093/bioinformatics/bti720>; the Matching Split Distance (Bogdanowicz & Giaro 2012) <doi:10.1109/TCBB.2011.48>; Maximum Agreement Subtree distances; the Kendall-Colijn (2016) distance <doi:10.1093/molbev/msw124>, and the Nearest
+    Neighbour Interchange (NNI) distance, approximated per Li et al. (1996) <doi:10.1007/3-540-61332-3_168>. Calculates the median of a set of trees under any distance metric.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
