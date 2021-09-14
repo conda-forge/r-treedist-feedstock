@@ -1,4 +1,4 @@
-{% set version = "2.1.1" %}
+{% set version = "2.2.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TreeDist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TreeDist/TreeDist_{{ version }}.tar.gz
-  sha256: 78d82a06dcc5bb25f4ef8448e0dcff3b0422fe13addbd71f9a8b8527616eb94a
+  sha256: b63d12395c04d21ee723c4962211b7ef3dcc1f6b3c5cd10694179d7861afd51c
 
 build:
   merge_build_host: true  # [win]
   number: 0
-  # given by r-treetools availability
-  skip: true  # [r_base == "3.6" and win]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -32,12 +30,14 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-rcpp
-    - r-rdpack
-    - r-treetools >1.3.1
+    - r-rdpack >=0.7
+    - r-treetools >=1.5.0
     - r-ape >=5.0
+    - r-cli >=3.0
     - r-colorspace
     - r-memoise
     - r-phangorn >=2.2.1
@@ -47,9 +47,10 @@ requirements:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-rcpp
-    - r-rdpack
-    - r-treetools >1.3.1
+    - r-rdpack >=0.7
+    - r-treetools >=1.5.0
     - r-ape >=5.0
+    - r-cli >=3.0
     - r-colorspace
     - r-memoise
     - r-phangorn >=2.2.1
