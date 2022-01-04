@@ -1,4 +1,4 @@
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TreeDist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TreeDist/TreeDist_{{ version }}.tar.gz
-  sha256: b63d12395c04d21ee723c4962211b7ef3dcc1f6b3c5cd10694179d7861afd51c
+  sha256: c1034c10a54be34ff5d21a2598bd47fb81bae7980f908e1bc1231e759104ade6
 
 build:
   merge_build_host: true  # [win]
