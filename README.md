@@ -3,6 +3,7 @@ About r-treedist-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-treedist-feedstock/blob/main/LICENSE.txt)
 
+
 About r-treedist
 ----------------
 
@@ -11,6 +12,7 @@ Home: https://ms609.github.io/TreeDist/, https://github.com/ms609/TreeDist
 Package license: GPL-3.0-or-later
 
 Summary: Implements measures of tree similarity, including information-based generalized Robinson-Foulds distances (Phylogenetic Information Distance, Clustering Information Distance, Matching Split Information Distance; Smith, 2020) <doi:10.1093/bioinformatics/btaa614>; Jaccard-Robinson-Foulds distances (Bocker et al. 2013) <doi:10.1007/978-3-642-40453-5_13>, including the Nye et al. (2006) metric <doi:10.1093/bioinformatics/bti720>; the Matching Split Distance (Bogdanowicz & Giaro 2012) <doi:10.1109/TCBB.2011.48>; Maximum Agreement Subtree distances; the Kendall-Colijn (2016) distance <doi:10.1093/molbev/msw124>, and the Nearest Neighbour Interchange (NNI) distance, approximated per Li et al. (1996) <doi:10.1007/3-540-61332-3_168>. Calculates the median of a set of trees under any distance metric.
+
 About r-treedist
 ----------------
 
