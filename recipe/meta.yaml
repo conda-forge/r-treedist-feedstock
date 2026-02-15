@@ -16,6 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -35,24 +39,20 @@ requirements:
     - r-base
     - r-rcpp
     - r-rdpack >=0.7
-    - r-treetools >=1.5.0
+    - r-treetools >=2.1.0
     - r-ape >=5.0
     - r-cli >=3.0
     - r-colorspace
-    - r-memoise
-    - r-phangorn >=2.2.1
     - r-shiny
     - r-shinyjs
   run:
     - r-base
     - r-rcpp
     - r-rdpack >=0.7
-    - r-treetools >=1.5.0
+    - r-treetools >=2.1.0
     - r-ape >=5.0
     - r-cli >=3.0
     - r-colorspace
-    - r-memoise
-    - r-phangorn >=2.2.1
     - r-shiny
     - r-shinyjs
 
@@ -64,9 +64,20 @@ test:
 about:
   home: https://ms609.github.io/TreeDist/, https://github.com/ms609/TreeDist
   license: GPL-3.0-or-later
-  summary: Implements measures of tree similarity, including information-based generalized Robinson-Foulds distances (Phylogenetic Information Distance, Clustering Information Distance, Matching Split Information Distance; Smith, 2020) <doi:10.1093/bioinformatics/btaa614>; Jaccard-Robinson-Foulds distances (Bocker et 
-    al. 2013) <doi:10.1007/978-3-642-40453-5_13>, including the Nye et al. (2006) metric <doi:10.1093/bioinformatics/bti720>; the Matching Split Distance (Bogdanowicz & Giaro 2012) <doi:10.1109/TCBB.2011.48>; Maximum Agreement Subtree distances; the Kendall-Colijn (2016) distance <doi:10.1093/molbev/msw124>, and the 
-    Nearest Neighbour Interchange (NNI) distance, approximated per Li et al. (1996) <doi:10.1007/3-540-61332-3_168>. Calculates the median of a set of trees under any distance metric.
+  summary: Implements measures of tree similarity, including information-based generalized Robinson-Foulds
+    distances (Phylogenetic Information Distance, Clustering Information Distance, Matching
+    Split Information Distance; Smith 2020) <doi:10.1093/bioinformatics/btaa614>; Jaccard-Robinson-Foulds
+    distances (Bocker et al. 2013) <doi:10.1007/978-3-642-40453-5_13>, including the
+    Nye et al. (2006) metric <doi:10.1093/bioinformatics/bti720>; the Matching Split
+    Distance (Bogdanowicz & Giaro 2012) <doi:10.1109/TCBB.2011.48>; the Hierarchical
+    Mutual Information (Perotti et al. 2015) <doi:10.1103/PhysRevE.92.062825>; Maximum
+    Agreement Subtree distances; the Kendall-Colijn (2016) distance <doi:10.1093/molbev/msw124>,
+    and the Nearest Neighbour Interchange (NNI) distance, approximated per Li et al.
+    (1996) <doi:10.1007/3-540-61332-3_168>. Includes tools for visualizing mappings
+    of tree space (Smith 2022) <doi:10.1093/sysbio/syab100>, for identifying islands
+    of trees (Silva and Wilkinson 2021) <doi:10.1093/sysbio/syab015>, for calculating
+    the median of sets of trees, and for computing the information content of trees
+    and splits.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
