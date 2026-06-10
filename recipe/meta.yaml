@@ -1,4 +1,4 @@
-{% set version = "2.14.0" %}
+{% set version = "2.14.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TreeDist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TreeDist/TreeDist_{{ version }}.tar.gz
-  sha256: d717ad029cf2f3273303eea29d30403c5592926d164a19bf93585de4f24e9608
+  sha256: 6494ccfb1b4e24ab7ccd66e333d6e8f318195b78434c4eb5c78b7f824f120fe6
 
 build:
   number: 0
